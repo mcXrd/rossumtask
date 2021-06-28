@@ -23,5 +23,3 @@ With all that being said - I tried to fill this space of uncertainity with most 
 asking for both queue_id and annotation_id) - so project is
 in the usable state - let me know if this is enough for you - or I can still adjust some things if you provide
 me with some more clarification.
-
-Last note - I dont provide
