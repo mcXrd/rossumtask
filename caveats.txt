@@ -1,0 +1,27 @@
+1) With username 'myUser123' and password 'secretSecret'  - trying to log via "https://api.elis.rossum.ai/v1/auth/login" - returns {'non_field_errors': ['Unable to log in with provided credentials.']}
+    Also creating free trial account is kinda problematic for me since it does not accept @gmail.com and neither @protonmail.com domain .
+    Because of that I decided to code whole solution blindfolded. But having account would help me quite a bit.
+2) export-UK demo teplate-2021-03-08.xml vs converted_file.xml - has to have few inconsistencies - otherwise it does not make sense to me
+        1) last item in converted_file.xml has Notes value - <Notes>Line item 2</Notes> but coresponding value in original is 'fre-ghti'
+            I wonder if I am supposed to detect text which does not look like word or sentence and replace it with generic
+            text in that case? Or is it just an error?
+        2) <TotalAmount>2706.00</TotalAmount> <Amount>2595.76</Amount> - these are value inside <Payable></Payable> in converted_file.xml
+            and it does not make sense to me. Value 2706.00 is not even present in original.xml at all.
+            What makes most sense here (to me) is that we have "amount_total" and "amount_total_tax" in the original
+            and that should correspond to "amount_total" + "amount_total_tax" = <TotalAmount>
+            and "amount_total"= <Amount>
+
+            But I am really just guessing here.
+
+3) Downloading annotation just by annotation_id does not seem to be possible - https://api.elis.rossum.ai/docs/#export-annotations
+    I thing this endpoint is most appropriate but it requires queue id - but document "Flask app for converting XMLs .pdf"
+    only states the notion of id for annotation (123456) - or is that 123456 id meant for queue?
+
+
+
+With all that being said - I tried to fill this space of uncertainity with most likely choices (e.g. I am
+asking for both queue_id and annotation_id) - so project is
+in the usable state - let me know if this is enough for you - or I can still adjust some things if you provide
+me with some more clarification.
+
+Last note - I dont provide
